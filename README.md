@@ -20,9 +20,11 @@ sudo apt update && sudo apt upgrade -y
 
 
 ## Install Docker
-`sudo apt install docker.io -y
+```bash
+sudo apt install docker.io -y
 sudo systemctl enable docker
-sudo systemctl start docker`
+sudo systemctl start docker
+```
 
 
 ## Pull the latest Jellyfin Docker Image
@@ -30,13 +32,15 @@ sudo systemctl start docker`
 
 
 ## Run Jellyfin Container
-`sudo docker run -d \
+```bash
+sudo docker run -d \
   --name jellyfin \
   -p 8096:8096 \
   -v ~/jellyfin/config:/config \
   -v ~/jellyfin/media:/media \
   --restart=unless-stopped \
-  jellyfin/jellyfin:latest`
+  jellyfin/jellyfin:latest
+  ```
 
 ## Accessing Jellyfin
 `http://<host-ip>:8096`
@@ -51,11 +55,13 @@ On first launch, create an admin account in Jellyfin.
 
 
 ## File Structure
-`~/jellyfin/
+```bash
+~/jellyfin/
    ├── config/   # Jellyfin configuration files
    └── media/    # Media files
         ├── movies/
-        └── series/`
+        └── series/
+```
 
 ## Notes
 - The container is set to restart automatically with --restart=unless-stopped.
